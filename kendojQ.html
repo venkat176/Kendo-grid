@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+
+	<title>Kendo jquery</title>
+
+	<link type="text/css" rel="stylesheet" href="/sites/Registration/SiteAssets/Kendo/styles/kendo.common.min.css">
+	<link type="text/css" rel="stylesheet" href="/sites/Registration/SiteAssets/Kendo/styles/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="/sites/Registration/SiteAssets/Kendo/styles/kendo.material-v2.min.css">
+	<link type="text/css" rel="stylesheet"
+		href="/sites/Registration/SiteAssets/Kendo/styles/kendo.default.mobile.min.css">
+	<link type="text/css" rel="stylesheet" href="/sites/Registration/SiteAssets/Kendo/styles/kendo.css">
+	<!--<link type="text/css" rel="stylesheet" href="/sites/Registration/SiteAssets/Kendo/styles/kendo.bootstrap-v4.min.css">-->
+
+	<script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
+	<script type="text/javascript" src="/_layouts/15/sp.js"></script>
+	<script type="text/javascript" src="/sites/Registration/SiteAssets/Kendo/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/sites/Registration/SiteAssets/Kendo/js/angular.min.js"></script>
+	<script type="text/javascript" src="/sites/Registration/SiteAssets/Kendo/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/sites/Registration/SiteAssets/Kendo/js/kendo.all.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script type="text/javascript" src="/sites/Registration/SiteAssets/Kendo/js/kendo.js"></script>
+
+
+	<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">6RUT33KEVNQH-1880476064-2309</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">40872489-6c02-4045-a240-c199dc21573b</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://xenfoss.sharepoint.com/sites/Registration/_layouts/15/DocIdRedir.aspx?ID=6RUT33KEVNQH-1880476064-2309, 6RUT33KEVNQH-1880476064-2309</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+	<div id="container">
+
+		<div class="row">
+			<div class="col">
+				<label for="cname">Name:</label>
+				<input type="text" class="k-textbox inputCls" id="cname" placeholder="enter name">
+			</div>
+			<div class="col">
+				<label for="mobile">Mobile Number:</label>
+				<input id="mobilenum" class="inputCls" placeholder="enter mobile number">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<label for="email">Email:</label>
+				<input type="text" class="k-textbox inputCls" id="email" placeholder="enter email">
+			</div>
+			<div class="col">
+				<label for="address">Address:</label>
+				<textarea id="addressId" class="k-textbox inputCls"></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="grid"></div>
+		</div>
+
+		<div class="row rgt">
+			<input type="button" class="k-button " id="cancel" value="cancel">
+			<input type="button" class="k-button " id="delete" value="delete">
+			<input type="button" class="k-button k-primary" id="update" value="update">
+			<input type="button" class="k-button k-primary" id="submit" value="submit">
+
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>

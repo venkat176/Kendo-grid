@@ -1,0 +1,45 @@
+﻿body{
+	 background-color: #ffffff;
+}
+#container{
+    width: 1000px;
+    background-color: #ffffff;
+    padding: 47px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .08), 0 5px 8px rgba(0, 0, 0, .08);
+    }
+label {
+    width: 120px;
+    font-size: 14px;
+}
+.row{
+	margin-bottom:15px;
+}
+.rgt{
+	display: flex;
+    justify-content: flex-end;
+}
+#addressId{
+	/*border:1px solid #A8A8A8!important;*/
+}
+.inputCls{
+	border-radius:0px;
+	border:0px !important;
+	border-bottom:1px solid #A8A8A8!important;
+}
+#mobilenum{
+	border-bottom:1px !important;
+}
+.error{
+	color:#FF0000;
+	margin-left:125px;
+}
+.pherror{
+	color:#FF0000;
+	margin-left:225px;
+}
+.gerror{
+	color:#FF0000;
+}
+button{
+	margin-right:10px;
+}

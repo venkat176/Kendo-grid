@@ -1,0 +1,246 @@
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Form</title>
+
+    <link rel="stylesheet" href="../styles/kendo.common.min.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/kendo.material-v2.min.css">
+    <link rel="stylesheet" href="../styles/kendo.default.mobile.min.css">
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/kendo.all.min.js"></script>
+
+    <style>
+        body {
+            background-color: #535C68;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .labelCls {
+            width: 120px;
+            font-size: 14px;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-top: 0px;
+            padding: 35px 40px 12px 40px;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .08), 0 5px 8px rgba(0, 0, 0, .08);
+        }
+
+        .blc {
+            padding-left: 40px;
+        }
+
+        .inputCls {
+            width: 280px !important;
+            color: #4C4B4B !important;
+        }
+
+        #ch1 {
+            padding-left: 100px !important;
+        }
+
+        .rgt {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button {
+            margin-right: 20px !important;
+        }
+
+        .checkt {
+            margin-top: 20px !important;
+        }
+    </style>
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">6RUT33KEVNQH-1880476064-2327</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">99220c4d-dbf2-4dca-a260-4ec9ae175d03</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://xenfoss.sharepoint.com/sites/Registration/_layouts/15/DocIdRedir.aspx?ID=6RUT33KEVNQH-1880476064-2327, 6RUT33KEVNQH-1880476064-2327</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+
+    <div class="container k-content k-group" ng-app="stuApp" ng-controller="stuCtrl">
+
+        <div class="row">
+            <h5>Personel Info</h5>
+        </div>
+        <div class="blc">
+            <div class="row">
+                <div class="col">
+                    <label for="firstname" class="labelCls">First Name:</label>
+                    <input type="text" kedotextbox class="k-textbox inputCls" placeholder="enter firstname">
+                </div>
+                <div class="col">
+                    <label for="lastname" class="labelCls">Last Name:</label>
+                    <input type="text" kedotextbox class="k-textbox inputCls" placeholder="enter lastname">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="DOB" class="labelCls">DOB:</label>
+                    <input kendo-datepicker="datePicker" ng-model="dob" class="inputCls"
+                        placeholder="select date of birth">
+                </div>
+                <div class="col">
+                    <label for="Age" class="labelCls">Age:</label>
+                    <input type="number" min="18" max="60" value="" class="k-textbox inputCls"
+                        placeholder="enter age between 18-60">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="gender" class="labelCls">Gender:</label>
+                    <input type="radio" name="gender" id="male" class="k-radio " ng-model="">
+                    <label class="k-radio-label labelCls" for="male">Male</label>
+                    <input type="radio" name="gender" id="female" class="k-radio" ng-modeel="">
+                    <label class="k-radio-label labelCls" for="female">Female</label>
+                </div>
+                <div class="col">
+                    <label for="marital" class="labelCls">Marital status:</label>
+                    <input type="radio" name="stat" id="married" class="k-radio" ng-model="">
+                    <label class="k-radio-label labelCls" for="married">Unmarried</label>
+                    <input type="radio" name="stat" id="unmarried" class="k-radio" ng-modeel="" checked="checked">
+                    <label class="k-radio-label labelCls" for="unmarried">Married</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h5>Contact Info</h5>
+        </div>
+        <div class="blc">
+            <div class="row">
+                <div class="col">
+                    <label for="dno" class="labelCls">D/No:</label>
+                    <input kendo-masked-text-box ng-model="dno" k-mask="'LL-000'" class="inputCls"
+                        placeholder="enter door number">
+                </div>
+                <div class="col">
+                    <label for="local" class="labelCls">Area/Street:</label>
+                    <!-- <input type="text" ng-model="street" class="k-textbox inputCls" placeholder="enter area/street"> -->
+                    <input kendo-auto-complete ng-model="country" k-data-source="countryNames"
+                        k-placeholder="'enter area/street'" class="k-widget k-autocomplete inputCls" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="state" class="labelCls">State:</label>
+                    <select name="state" id="State" ng-model="state" kendo-combo-box k-placeholder="'select state'"
+                        k-filter="'contains'" k-auto-bind="false" k-data-source="statesData" class="inputCls"></select>
+                </div>
+                <div class="col">
+                    <label for="dist" class="labelCls">District:</label>
+                    <input ng-model="district" kendo-combo-box k-placeholder="'select district'" k-filter="'contains'"
+                        k-auto-bind="false" k-data-source="districtData" class="inputCls">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="city" class="labelCls">City/town:</label>
+                    <select name="city" id="city" ng-model="City" kendo-combo-box k-placeholder="'select city'"
+                        k-filter="'contains'" k-auto-bind="false" k-data-source="cityData" class="inputCls"></select>
+                </div>
+                <div class="col">
+                    <label for="pin" class="labelCls">Postal pin:</label>
+                    <input ng-model="pin" kendo-masked-text-box k-placeholder="'enter pincode'" k-mask="'000-000'"
+                        class="inputCls" placeholder="enter pincode">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="mobile" class="labelCls">Mobile:</label>
+                    <input kendo-masked-text-box ng-model="mobile" k-mask="'000-000-0000'" class="inputCls"
+                        placeholder="enter mobile number">
+                </div>
+                <div class="col">
+                    <label for="email" class="labelCls">Email:</label>
+                    <input type="text" ng-model="street" class="k-textbox inputCls" placeholder="enter email address">
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <h5>Educational Info</h5>
+        </div>
+        <div class="blc">
+
+            <!-- <div class="row">
+                <div class="col">
+                    <label for="pro">Qualification:</label>
+                    <select id="pro" name="qual" id="qual" kendo-drop-down-list k-auto-bind="false"
+                        k-placeholder="'select qaulification'" k-data-source="qualifications" class="inputCls"></select>
+                </div>
+                <div class="col">
+                        <label for="pro">Qualification:</label>
+                        <input name="files"
+                        type="file"
+                        kendo-upload
+                        k-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                        k-select="onSelect"
+                        class="inputCls">
+                </div>
+            </div> -->
+
+        </div>
+
+        <div class="row checkt">
+            <input type="checkbox" class="k-checkbox " id="ch1"><label for="ch1" class="k-checkbox-label">Agree terms
+                and conditions</label>
+        </div>
+
+        <div class="row rgt">
+            <button class="k-button " ng-click="onClick2()">cancel</button>&nbsp;
+            <button class="k-button k-primary" ng-click="onClick1()">submit</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        var app = angular.module('stuApp', ["kendo.directives"]);
+        app.controller('stuCtrl', function ($scope) {
+            $scope.statesData = ["Andhra", "Karnataka", "Telangana", "Maharastra", "Goa", "Tamilnadu"];
+            $scope.districtData = ["East", "West", "krishna"];
+            $scope.cityData = ["Vizag", "Amaravathi", "Hyderabad", "Bangalore", "Goa", "Mumbai"];
+            $scope.countryNames = ["jayamahal", "marthali", "koramangal", "Bellandur", "Benson Town", "Halasur", "Shivajinagar", "Majestic", "Cubbon Park", "Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus", "Belgium", "Bosnia & Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark",
+                "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "India", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco",
+                "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "Russia", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "Ukraine", "United Kingdom", "Vatican City"
+            ];
+            $scope.qualifications = ["B.tech", "B.pharmacy", "Degree"];
+
+            $scope.onSelect = function (e) {
+                var message = $.map(e.files, function (file) { return file.name; }).join(", ");
+                kendoConsole.log("event :: select (" + message + ")");
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles/kendo.common.min.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/kendo.material-v2.min.css">
+    <link rel="stylesheet" href="../styles/kendo.default.mobile.min.css">
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/kendo.all.min.js"></script>
+
+    <style>
+        label {
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #444;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #DAE0E2;
+        }
+
+        .card {
+
+            padding: 20px;
+            box-shadow: 0 2px 2px 2px rgba(0,0,0,.08), 0 5px 8px rgba(0,0,0,.08);
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .rgt {
+            float: right;
+            margin-top: 10px;
+        }
+    </style>
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">6RUT33KEVNQH-1880476064-2325</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">a56f4df0-c751-4bfb-b6c5-1134d23afd8e</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://xenfoss.sharepoint.com/sites/Registration/_layouts/15/DocIdRedir.aspx?ID=6RUT33KEVNQH-1880476064-2325, 6RUT33KEVNQH-1880476064-2325</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+
+    <!-- <div class="demo-section k-content" ng-controller="MyCtrl">
+            <div class="row">
+                <input kendo-auto-complete ng-model="country" k-data-source="countryNames" />
+            </div>
+            <div class="row">
+                <div class="col">
+                    <kendo-button class="k-primary" ng-click="onClick1()">Primary Button</kendo-button>
+                </div>
+                <div class="col">
+                    <kendo-button class="k-primary" ng-click="onClick1()">Primary Button</kendo-button>
+                </div>
+            </div>
+            <input kendo-masked-text-box ng-model="phone"
+                         k-mask="'(999) 000-0000'" />
+
+             <input class="k-textbox" placeholder="Your Name" />-->
+
+
+
+    <div id="example" ng-app="KendoDemos" ng-controller="MyCtrl">
+        <div class="row">
+            <div class="card k-content">
+                <div class="card-body">
+
+                    <div class="row">
+                        <label for="fullname">Fullname</label>
+                        <input kendoTextBox type="text" ng-model="fname" class="k-textbox form-control">
+
+                    </div>
+                    <div class="row">
+                        <label for="phone">Phone</label>
+                        <!-- <input type="number" ng-model="pnum" class="k-textbox form-control"> -->
+                        <input kendo-masked-text-box ng-model="phone" k-mask="'(999) 000-0000'" class=" form-control" />
+                    </div>
+                    <div class="row">
+                        <label for="email">Email</label>
+                        <span class="k-textbox k-space-right form-control">
+                            <input type="text" class="">
+                            <a href="#" class="k-icon k-i-user">&nbsp;</a>
+                        </span>
+                        <!-- <input type="text" ng-model="fname" class="k-textbox k-i-search k-i-search form-control  "> -->
+                    </div>
+                    <div class="row demo-section k-content">
+                        <label for="country">Country</label>
+                        <input kendo-auto-complete ng-model="country" k-data-source="countryNames" class=" k-widget k-autocomplete form-control"/>
+                        
+                    </div>
+                    <div class="row">
+                        <label for="query">Query</label>
+                        <textarea type="text" ng-model="tname" class="k-textbox form-control"></textarea>
+                    </div>
+                    <div class="row rgt">
+                        <button class="k-button " ng-click="onClick2()">cancel</button>&nbsp;
+                        <button class="k-button k-primary" ng-click="onClick1()">submit</button>
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="example" class="card">
+        <div class="demo-section k-content">
+            <ul class="fieldlist">
+                <li>
+                    <label for="simple-input">Input</label>
+                    <input id="simple-input" type="text" class="k-textbox" style="width: 100%;" />
+                </li>
+                <li>
+                    <label for="simple-textarea">Textarea</label>
+                    <textarea id="simple-textarea" class="k-textbox" style="width: 100%;"></textarea>
+                </li>
+                <li>
+                    <label for="icon-left">Input with icon on the left</label>
+                    <span class="k-textbox k-space-left" style="width: 100%;">
+                        <input type="text" id="icon-left" />
+                        <a href="#" class="k-icon k-i-search">&nbsp;</a>
+                    </span>
+                </li>
+                <li>
+                    <label for="icon-right">Input with icon on the right</label>
+                    <span class="k-textbox k-space-right" style="width: 100%;">
+                        <input type="text" id="icon-right" />
+                        <a href="#" class="k-icon k-i-search">&nbsp;</a>
+                    </span>
+                </li>
+                <li>
+                    <h4>Buttons</h4>
+                    <button class="k-button">Default</button>&nbsp;
+                    <button class="k-button k-primary">Primary</button>
+                </li>
+                <li>
+                    <h4>Link as Button</h4>
+                    <a href="http://www.google.com" class="k-button">google.com</a>
+                </li>
+            </ul>
+
+        </div>
+    </div> -->
+
+        <script>
+            angular.module("KendoDemos", ["kendo.directives"])
+                .controller("MyCtrl", function ($scope) {
+                    $scope.countryNames = ["Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus", "Belgium", "Bosnia & Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark",
+                        "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary","India", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco",
+                        "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "Russia", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "Ukraine", "United Kingdom", "Vatican City"
+                    ];
+                    $scope.onClick1 = function () {
+                        alert("Primary button clicked");
+                    };
+                    $scope.onClick2 = function () {
+                        alert("button clicked");
+                    };
+                })
+
+
+
+        </script>
+</body>
+
+</html>

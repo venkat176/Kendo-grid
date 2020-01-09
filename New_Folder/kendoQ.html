@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../CSS/kendo.common.min.css" />
+    <link rel="stylesheet" href="../CSS/kendo.default.min.css" />
+    <link rel="stylesheet" href="../CSS/kendo.mobile.all.min.css" />
+
+    <script src="../JS/jquery-3.4.1.min.js"></script>
+    <script src="../JS/kAngular.min.js"></script>
+    <script src="../JS/kendo.all.min.js"></script>
+
+    <style>
+    
+    .k-primary {
+            min-width: 150px;
+        }
+    
+    </style>
+    
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">6RUT33KEVNQH-1880476064-2318</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">1defb7cb-1da6-411e-9d18-d9190ed19a25</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://xenfoss.sharepoint.com/sites/Registration/_layouts/15/DocIdRedir.aspx?ID=6RUT33KEVNQH-1880476064-2318, 6RUT33KEVNQH-1880476064-2318</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+
+    <div id="example" ng-app="KendoDemos">
+        <div class="demo-section k-content" ng-controller="MyCtrl">
+            <h4>Select Country /e.g. Armenia/</h4>
+            <input kendo-auto-complete ng-model="country" k-data-source="countryNames" style="width: 100%;" />
+            <p class="demo-hint">Your selection: {{ country }}</p>
+        </div>
+    </div>
+
+
+    <kendo-button class="k-primary" ng-click="onClick1()">Primary Button</kendo-button>
+    
+    <script>
+      angular.module("KendoDemos", [ "kendo.directives" ])
+              .controller("MyCtrl", function($scope){
+                  $scope.countryNames = ["Albania","Andorra","Armenia","Austria","Azerbaijan","Belarus","Belgium","Bosnia & Herzegovina","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark",
+                  "Estonia","Finland","France","Georgia","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kosovo","Latvia","Liechtenstein","Lithuania","Luxembourg","Macedonia","Malta","Moldova","Monaco",
+                "Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Russia","San Marino","Serbia","Slovakia","Slovenia","Spain","Sweden","Switzerland","Turkey","Ukraine","United Kingdom","Vatican City"
+                 ];
+              })
+    </script>
+    
+
+
+</body>
+</html>
