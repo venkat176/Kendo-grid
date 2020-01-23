@@ -1,10 +1,12 @@
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script type="text/javascript" src="../jquery-3.4.1.min.js"></script> 
+    <script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="../angular.min.js"></script>
     <script type="text/javascript" src="../kAngular.min.js"></script>
     <script type="text/javascript" src="../kendo.all.min.js"></script>
@@ -14,7 +16,7 @@
     <link rel="stylesheet" href="../kendo.silver.min.css">
     <link rel="stylesheet" href="../kendo.mobile.all.min.css">
 
-<!--[if gte mso 9]><xml>
+    <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
 <mso:_dlc_DocId msdt:dt="string">6RUT33KEVNQH-1880476064-2321</mso:_dlc_DocId>
 <mso:_dlc_DocIdItemGuid msdt:dt="string">c487d9b0-f3cb-433b-bc57-6207705f8f7f</mso:_dlc_DocIdItemGuid>
@@ -22,24 +24,26 @@
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
 </head>
+
 <body>
     <div ng-app="myApp" ng-controller="myCtrl">
-    <button kendoButton (click)="onButtonClick()" ng-click="apps1()">Default</button>
+        <button kendoButton (click)="onButtonClick()" ng-click="apps1()">Default</button>
 
-    <input kendo-datepicker="datePicker" k-on-change="onChange()">  
+        <input kendo-datepicker="datePicker" k-on-change="onChange()">
 
     </div>
     <script>
-    
-        var app = angular.module("myApp",['kendo.directives']);
-        app.controller("myCtrl",function($scope){
 
-            $scope.onChange = function() {
+        var app = angular.module("myApp", ['kendo.directives']);
+        app.controller("myCtrl", function ($scope) {
+
+            $scope.onChange = function () {
                 alert('fjj')
             };
 
         });
-    
+
     </script>
 </body>
+
 </html>

@@ -1,4 +1,6 @@
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +18,7 @@
     <script type="text/javascript" src="../js/kendo.all.min.js"></script>
 
 
-<!--[if gte mso 9]><xml>
+    <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
 <mso:_dlc_DocId msdt:dt="string">6RUT33KEVNQH-1880476064-2319</mso:_dlc_DocId>
 <mso:_dlc_DocIdItemGuid msdt:dt="string">d53a7fbd-e278-48a8-9c6e-0b522ffc193c</mso:_dlc_DocIdItemGuid>
@@ -24,11 +26,13 @@
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
 </head>
+
 <body>
     <div id="example" ng-app="gridTestApp" ng-controller="TestController">
-        <kendo-grid k-data-source="gridData" k-columns="gridColumns" k-selectable="true" k-editable="editableOptions" k-save="saveFunction">
+        <kendo-grid k-data-source="gridData" k-columns="gridColumns" k-selectable="true" k-editable="editableOptions"
+            k-save="saveFunction">
         </kendo-grid>
-        <p ng-show="selected">  
+        <p ng-show="selected">
             <label>Hero:
                 <input ng-model="artist" />
             </label>
@@ -55,18 +59,18 @@
     </div>
     <script>
         angular.module("gridTestApp", ["kendo.directives"])
-            .controller("TestController", function($scope) {
+            .controller("TestController", function ($scope) {
                 $scope.dynamicData = [{
-                        artist: "Pink Floyd",
-                        track: "The dark side of the Moon"
-                    }, {
-                        artist: "The Beatles",
-                        track: "I've just seen a face"
-                    }, {
-                        artist: "Queen",
-                        track: "Innuendo"
-                    }];
-                
+                    artist: "Pink Floyd",
+                    track: "The dark side of the Moon"
+                }, {
+                    artist: "The Beatles",
+                    track: "I've just seen a face"
+                }, {
+                    artist: "Queen",
+                    track: "Innuendo"
+                }];
+
                 $scope.gridData = new kendo.data.DataSource({
                     data: $scope.dynamicData,
                     schema: {
@@ -95,10 +99,10 @@
                 }, {
                     field: "track",
                     title: "Track"
-                },  {
+                }, {
                     field: "",
                     title: "Car"
-                }, 
+                },
                 {
                     command: ["edit", "destroy"],
                     title: "&nbsp;",
@@ -106,10 +110,10 @@
                     editable: "inline"
                 }];
                 $scope.editableOptions = "inline";
-                $scope.saveFunction = function(e) {
+                $scope.saveFunction = function (e) {
                     console.log("somehting was modified", e);
                 }
-                
+
                 // setTimeout(function() { $scope.dynamicData.push({
                 //         artist: "Pink Floyd 2 ",
                 //         track: "The dark side of the Moon2 "
@@ -119,4 +123,5 @@
             });
     </script>
 </body>
+
 </html>
